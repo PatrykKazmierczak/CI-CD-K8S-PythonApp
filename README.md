@@ -1,7 +1,7 @@
 # Monitoring-and-Continuous-Integration-with-Kubernetes
 Project Steps:
 
-# 1. Setup Kubernetes Cluster:<br>
+** 1. Setup Kubernetes Cluster:<br>
 • Use a tool like Minikube or kind to set up a local Kubernetes cluster for development and testing.
 
 # 2. Create a Simple Web Application:<br>
