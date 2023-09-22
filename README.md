@@ -10,6 +10,7 @@ Project Steps:
 •	Push the Docker image to a container registry (e.g., Docker Hub, Google Container Registry).
 # 4.	Kubernetes Deployment:
 •	Create Kubernetes manifests (YAML files) for deploying your application.
+
 •	Deploy your application on Kubernetes using kubectl or a CI/CD tool.
 # 5.	Implement Monitoring with Prometheus and Grafana:
 •	Install Prometheus and Grafana on your Kubernetes cluster.
