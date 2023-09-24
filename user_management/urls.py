@@ -10,6 +10,9 @@ from users.views import CustomLoginView, ResetPasswordView, ChangePasswordView
 
 from users.forms import LoginForm
 
+from django.urls import path
+from django_prometheus import exports
+
 urlpatterns = [
     path('admin/', admin.site.urls),
 
@@ -19,6 +22,8 @@ urlpatterns = [
                                            authentication_form=LoginForm), name='login'),
 
     path('logout/', auth_views.LogoutView.as_view(template_name='users/logout.html'), name='logout'),
+
+    path('', include('django_prometheus.urls')),
 
     path('password-reset/', ResetPasswordView.as_view(), name='password_reset'),
 
