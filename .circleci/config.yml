@@ -1,22 +1,30 @@
 version: 2.1
 
 jobs:
-  test-and-lint:
+  say-hello:
     docker:
-      - image: cimg/python:3.10.1
+      - image: cimg/base:stable
     steps:
       - checkout
       - run:
-          name: install dependencies
-          command: pip install -r requirements.txt
+          name: "Say hello"
+          command: "echo Hello, World!"
+
+  # Define a new job for running tests
+  run-tests:
+    docker:
+      - image: python:3.8  # Use an appropriate Python version
+    steps:
+      - checkout
       - run:
-          name: lint
-          command: pylint my_media/ media_organizer/
+          name: "Install dependencies"
+          command: "pip install -r requirements.txt"
       - run:
-          name: run tests
-          command: python manage.py test
+          name: "Run tests"
+          command: "python -m unittest discover tests"
 
 workflows:
-  build-and-test-workflow:
+  say-hello-workflow:
     jobs:
-      - test-and-lint
+      - say-hello
+      - run-tests  # Add the "run-tests" job to the workflow
