@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: web-app
+  name: web-app-testing
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: web-app
+      app: web-app-testing
   template:
     metadata:
       name: app
       labels:
-        app: web-app
+        app: web-app-testing
     spec:
       containers:
         - name: app
-          image: patronix9345/web-app:0.0.1
+          image: patronix9345/web-app:0.0.4
           ports:
             - containerPort: 8000
           livenessProbe:
